@@ -1,8 +1,8 @@
 const express = require("express");
-const campsiteRouter = express.Router();
-const routerName = "campsite";
+const partnerRouter = express.Router();
+const routerName = "partner";
 
-campsiteRouter
+partnerRouter
   .route("/")
   .all((req, res, next) => {
     res.statusCode = 200;
@@ -25,7 +25,7 @@ campsiteRouter
     res.end(`Deleting all ${routerName}s`);
   });
 
-campsiteRouter
+partnerRouter
   .route(`/:${routerName}Id`)
   .all((req, res, next) => {
     res.statusCode = 200;
@@ -34,21 +34,21 @@ campsiteRouter
   })
   .get((req, res) => {
     res.end(
-      `Will send details of the ${routerName}: ${req.params.campsiteId} to you`
+      `Will send details of the ${routerName}: ${req.params.partnerId} to you`
     );
   })
   .post((req, res) => {
     res.end(
-      `POST operation not supported on /${routerName}/${req.params.campsiteId}`
+      `POST operation not supported on /${routerName}/${req.params.partnerId}`
     );
   })
   .put((req, res) => {
     res.end(
-      `Updating the ${routerName}: ${req.params.campsiteId} will update the ${routerName}: ${req.body.description} with description: ${req.body.description}`
+      `Updating the ${routerName}: ${req.params.partnerId} will update the ${routerName}: ${req.body.description} with description: ${req.body.description}`
     );
   })
   .delete((req, res) => {
-    res.end(`Deleting ${routerName}: ${req.params.campsiteId}`);
+    res.end(`Deleting ${routerName}: ${req.params.partnerId}`);
   });
 
-module.exports = campsiteRouter;
+module.exports = partnerRouter;

@@ -1,8 +1,8 @@
 const express = require("express");
-const campsiteRouter = express.Router();
-const routerName = "campsite";
+const promotionRouter = express.Router();
+const routerName = "promotion";
 
-campsiteRouter
+promotionRouter
   .route("/")
   .all((req, res, next) => {
     res.statusCode = 200;
@@ -25,7 +25,7 @@ campsiteRouter
     res.end(`Deleting all ${routerName}s`);
   });
 
-campsiteRouter
+promotionRouter
   .route(`/:${routerName}Id`)
   .all((req, res, next) => {
     res.statusCode = 200;
@@ -34,21 +34,21 @@ campsiteRouter
   })
   .get((req, res) => {
     res.end(
-      `Will send details of the ${routerName}: ${req.params.campsiteId} to you`
+      `Will send details of the ${routerName}: ${req.params.promotionId} to you`
     );
   })
   .post((req, res) => {
     res.end(
-      `POST operation not supported on /${routerName}/${req.params.campsiteId}`
+      `POST operation not supported on /${routerName}/${req.params.promotionId}`
     );
   })
   .put((req, res) => {
     res.end(
-      `Updating the ${routerName}: ${req.params.campsiteId} will update the ${routerName}: ${req.body.description} with description: ${req.body.description}`
+      `Updating the ${routerName}: ${req.params.promotionId} will update the ${routerName}: ${req.body.description} with description: ${req.body.description}`
     );
   })
   .delete((req, res) => {
-    res.end(`Deleting ${routerName}: ${req.params.campsiteId}`);
+    res.end(`Deleting ${routerName}: ${req.params.promotionId}`);
   });
 
-module.exports = campsiteRouter;
+module.exports = promotionRouter;
