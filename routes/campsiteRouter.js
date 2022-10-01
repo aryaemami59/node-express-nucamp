@@ -39,12 +39,12 @@ campsiteRouter
   })
   .post((req, res) => {
     res.end(
-      `POST operation not supported on /${routerName}/${req.params.campsiteId}`
+      `POST operation not supported on /${routerName}s/${req.params.campsiteId}`
     );
   })
   .put((req, res) => {
     res.end(
-      `Updating the ${routerName}: ${req.params.campsiteId} will update the ${routerName}: ${req.body.description} with description: ${req.body.description}`
+      `Updating the ${routerName}: ${req.params.campsiteId} \nWill replace with the ${routerName}: ${req.body.name} \n\twith description: ${req.body.description}`
     );
   })
   .delete((req, res) => {

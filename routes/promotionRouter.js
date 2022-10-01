@@ -39,12 +39,12 @@ promotionRouter
   })
   .post((req, res) => {
     res.end(
-      `POST operation not supported on /${routerName}/${req.params.promotionId}`
+      `POST operation not supported on /${routerName}s/${req.params.promotionId}`
     );
   })
   .put((req, res) => {
     res.end(
-      `Updating the ${routerName}: ${req.params.promotionId} will update the ${routerName}: ${req.body.description} with description: ${req.body.description}`
+      `Updating the ${routerName}: ${req.params.promotionId} \nWill replace with the ${routerName}: ${req.body.name} \n\twith description: ${req.body.description}`
     );
   })
   .delete((req, res) => {

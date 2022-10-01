@@ -39,12 +39,12 @@ partnerRouter
   })
   .post((req, res) => {
     res.end(
-      `POST operation not supported on /${routerName}/${req.params.partnerId}`
+      `POST operation not supported on /${routerName}s/${req.params.partnerId}`
     );
   })
   .put((req, res) => {
     res.end(
-      `Updating the ${routerName}: ${req.params.partnerId} will update the ${routerName}: ${req.body.description} with description: ${req.body.description}`
+      `Updating the ${routerName}: ${req.params.partnerId} \nWill replace with the ${routerName}: ${req.body.name} \n\twith description: ${req.body.description}`
     );
   })
   .delete((req, res) => {
